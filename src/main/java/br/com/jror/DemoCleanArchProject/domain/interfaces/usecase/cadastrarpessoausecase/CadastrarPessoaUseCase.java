@@ -5,6 +5,6 @@ import br.com.jror.DemoCleanArchProject.application.command.CadastrarPessoaComma
 
 import java.util.UUID;
 
-public interface CadastrarPessoaUseCase extends Command<CadastrarPessoaCommand> {
+public interface CadastrarPessoaUseCase {
     UUID execute(CadastrarPessoaCommand cadastrarPessoaCommand);
 }

@@ -2,6 +2,8 @@ package br.com.jror.DemoCleanArchProject.api;
 
 import javax.validation.Valid;
 
+import an.awesome.pipelinr.Pipeline;
+import an.awesome.pipelinr.Pipelinr;
 import br.com.jror.DemoCleanArchProject.api.request.AtualizarPessoaRequest;
 import br.com.jror.DemoCleanArchProject.api.request.CadastrarPessoaRequest;
 import br.com.jror.DemoCleanArchProject.application.command.AtualizarPessoaCommand;
@@ -13,14 +15,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
+import java.util.stream.Stream;
 
 @RestController
 public class PessoaController {
     private final ModelMapper mapper;
-
+    private final Pipeline pipeline;
     @Autowired
-    public PessoaController(ModelMapper mapper) {
+    public PessoaController(ModelMapper mapper, Pipeline pipeline) {
         this.mapper = mapper;
+        this.pipeline = pipeline;
+
     }
 
     @RequestMapping(value = "/pessoa", method = RequestMethod.GET, produces="application/json")
@@ -39,7 +44,8 @@ public class PessoaController {
     public ResponseEntity<?> Post(@Valid @RequestBody CadastrarPessoaRequest cadastrarPessoaRequest)
     {
         var command = mapper.map(cadastrarPessoaRequest, CadastrarPessoaCommand.class);
-        return null;
+        var response = pipeline.send(command);
+        return ResponseEntity.ok(response);
     }
     @RequestMapping(value = "/pessoa/{id}", method =  RequestMethod.PUT, produces="application/json", consumes="application/json")
     public ResponseEntity<?> Put(@Valid @RequestBody AtualizarPessoaRequest request, @PathVariable(value = "id") UUID id){

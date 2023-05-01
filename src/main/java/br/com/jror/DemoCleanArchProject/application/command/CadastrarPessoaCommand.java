@@ -1,10 +1,14 @@
 package br.com.jror.DemoCleanArchProject.application.command;
 
+import an.awesome.pipelinr.Command;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-@RequiredArgsConstructor
+import java.util.UUID;
 @Getter
-public class CadastrarPessoaCommand {
+@Setter
+public class CadastrarPessoaCommand implements Command<UUID> {
     private String nome;
 }
