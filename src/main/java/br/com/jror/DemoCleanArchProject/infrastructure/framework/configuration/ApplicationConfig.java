@@ -4,23 +4,21 @@ import an.awesome.pipelinr.Command;
 import an.awesome.pipelinr.Notification;
 import an.awesome.pipelinr.Pipeline;
 import an.awesome.pipelinr.Pipelinr;
-import br.com.jror.DemoCleanArchProject.application.command.CadastrarPessoaCommand;
-import br.com.jror.DemoCleanArchProject.application.handler.CadastrarPessoaHandler;
-import br.com.jror.DemoCleanArchProject.domain.interfaces.usecase.cadastrarpessoausecase.CadastrarPessoaUseCase;
+import br.com.jror.DemoCleanArchProject.infrastructure.framework.interceptor.NotificationInterceptor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.stream.Stream;
 
 @Configuration
 public class ApplicationConfig {
 
-    private final CadastrarPessoaUseCase cadastrarPessoaUseCase;
 
-    public ApplicationConfig(CadastrarPessoaUseCase cadastrarPessoaUseCase) {
-        this.cadastrarPessoaUseCase = cadastrarPessoaUseCase;
+    private final NotificationInterceptor notificationFilter;
+
+    public ApplicationConfig(NotificationInterceptor notificationFilter) {
+        this.notificationFilter = notificationFilter;
     }
 
     @Bean
@@ -35,4 +33,5 @@ public class ApplicationConfig {
                 .with(notificationHandlers::stream)
                 .with(middlewares::orderedStream);
     }
+
 }

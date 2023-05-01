@@ -1,13 +1,13 @@
 package br.com.jror.DemoCleanArchProject.domain.model;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import java.util.UUID;
 
 @Getter
-@RequiredArgsConstructor
+@Setter
 public class PessoaModel {
-    private UUID id;
+    private  UUID id;
     private String nome;
 }

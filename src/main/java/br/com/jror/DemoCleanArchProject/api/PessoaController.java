@@ -1,9 +1,6 @@
 package br.com.jror.DemoCleanArchProject.api;
 
-import javax.validation.Valid;
-
 import an.awesome.pipelinr.Pipeline;
-import an.awesome.pipelinr.Pipelinr;
 import br.com.jror.DemoCleanArchProject.api.request.AtualizarPessoaRequest;
 import br.com.jror.DemoCleanArchProject.api.request.CadastrarPessoaRequest;
 import br.com.jror.DemoCleanArchProject.application.command.AtualizarPessoaCommand;
@@ -14,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.UUID;
-import java.util.stream.Stream;
 
 @RestController
 public class PessoaController {

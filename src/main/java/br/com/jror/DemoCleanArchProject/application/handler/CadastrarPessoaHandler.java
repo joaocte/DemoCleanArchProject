@@ -3,6 +3,7 @@ package br.com.jror.DemoCleanArchProject.application.handler;
 import an.awesome.pipelinr.Command;
 import br.com.jror.DemoCleanArchProject.application.command.CadastrarPessoaCommand;
 import br.com.jror.DemoCleanArchProject.domain.interfaces.usecase.cadastrarpessoausecase.CadastrarPessoaUseCase;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +18,7 @@ public class CadastrarPessoaHandler implements Command.Handler<CadastrarPessoaCo
         this.cadastrarPessoaUseCase = cadastrarPessoaUseCase;
     }
 
+    @SneakyThrows
     @Override
     public UUID handle(CadastrarPessoaCommand cadastrarPessoaCommand) {
         return cadastrarPessoaUseCase.execute(cadastrarPessoaCommand);

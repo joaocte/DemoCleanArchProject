@@ -1,10 +1,10 @@
 package br.com.jror.DemoCleanArchProject.domain.interfaces.usecase.cadastrarpessoausecase;
 
-import an.awesome.pipelinr.Command;
 import br.com.jror.DemoCleanArchProject.application.command.CadastrarPessoaCommand;
+import br.com.jror.DemoCleanArchProject.infrastructure.framework.exceptions.AlreadyRegisteredException;
 
 import java.util.UUID;
 
 public interface CadastrarPessoaUseCase {
-    UUID execute(CadastrarPessoaCommand cadastrarPessoaCommand);
+    UUID execute(CadastrarPessoaCommand cadastrarPessoaCommand) throws AlreadyRegisteredException;
 }
