@@ -1,4 +1,4 @@
-package br.com.jror.DemoCleanArchProject.application.command;
+package br.com.jror.DemoCleanArchProject.application.command.resquest;
 
 import an.awesome.pipelinr.Command;
 import lombok.AllArgsConstructor;

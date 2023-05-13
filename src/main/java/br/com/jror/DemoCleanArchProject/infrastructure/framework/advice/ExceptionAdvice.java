@@ -1,4 +1,4 @@
-package br.com.jror.DemoCleanArchProject.infrastructure.framework.Filters;
+package br.com.jror.DemoCleanArchProject.infrastructure.framework.advice;
 import br.com.jror.DemoCleanArchProject.infrastructure.framework.model.ProblemDetails;
 import br.com.jror.DemoCleanArchProject.infrastructure.framework.exceptions.*;
 import org.springframework.http.HttpStatus;

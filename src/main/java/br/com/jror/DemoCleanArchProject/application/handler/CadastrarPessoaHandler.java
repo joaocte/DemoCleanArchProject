@@ -1,7 +1,7 @@
 package br.com.jror.DemoCleanArchProject.application.handler;
 
 import an.awesome.pipelinr.Command;
-import br.com.jror.DemoCleanArchProject.application.command.CadastrarPessoaCommand;
+import br.com.jror.DemoCleanArchProject.application.command.resquest.CadastrarPessoaCommand;
 import br.com.jror.DemoCleanArchProject.domain.interfaces.usecase.cadastrarpessoausecase.CadastrarPessoaUseCase;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;

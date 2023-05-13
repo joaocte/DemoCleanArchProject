@@ -1,4 +1,4 @@
-package br.com.jror.DemoCleanArchProject.application.query;
+package br.com.jror.DemoCleanArchProject.application.query.request;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

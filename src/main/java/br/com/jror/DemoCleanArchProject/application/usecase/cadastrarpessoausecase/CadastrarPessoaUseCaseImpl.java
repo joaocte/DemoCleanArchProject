@@ -1,6 +1,6 @@
 package br.com.jror.DemoCleanArchProject.application.usecase.cadastrarpessoausecase;
 
-import br.com.jror.DemoCleanArchProject.application.command.CadastrarPessoaCommand;
+import br.com.jror.DemoCleanArchProject.application.command.resquest.CadastrarPessoaCommand;
 import br.com.jror.DemoCleanArchProject.domain.interfaces.usecase.cadastrarpessoausecase.CadastrarPessoaUseCase;
 import br.com.jror.DemoCleanArchProject.domain.model.PessoaModel;
 import br.com.jror.DemoCleanArchProject.domain.validation.PessoaValidation;
